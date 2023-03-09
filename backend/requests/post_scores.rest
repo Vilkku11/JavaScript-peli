@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/scores
+Content-Type: application/json
+
+{
+    "name": "Tester123",
+    "score": 12345
+}
