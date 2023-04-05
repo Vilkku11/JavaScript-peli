@@ -1,5 +1,4 @@
 const card = document.getElementById("gameOverCard");
-const scores = document.getElementById("highScores");
 
 // Card visibility
 //  card.style.visibility = "hidden";
@@ -8,27 +7,52 @@ const scores = document.getElementById("highScores");
 const toMainMenu = () => {
   console.log("to main menu");
 
-  //card.style.visibility = "hidden";
+  //setPlayerScore(42043);
 };
 
 // Retry button
 const retry = () => {
   console.log("retry");
-
-  //card.style.visibility = "hidden";
+  fetchHighScores();
 };
 
-const HighScores = [
-  { name: "player1", score: 20 },
-  { name: "player2", score: 40 },
-  { name: "player3", score: 60 },
-  { name: "player4", score: 80 },
-  { name: "player5", score: 990 },
-];
+// Set player score
+const setPlayerScore = (points) => {
+  const playerScore = document.querySelector("#player_score");
+  playerScore.textContent = points + "!";
+};
 
-const fetchHighScores = () => {
+// Fetch scores from backend
+const fetchHighScores = async () => {
+  const highScores = document.querySelector("#db_scores");
+
   console.log("fetching highscores");
-  let score = HighScores;
-  console.log(score.length);
-  console.log(score[0].name);
+  const response = await fetch("http://localhost:3001/api/scores");
+  let score = await response.json();
+  score = score.sort((a, b) => b.score - a.score);
+  console.log(score);
+
+  let text = "";
+  for (let i = 0; i < score.length; i++) {
+    text = text + score[i].name + ":\xa0\xa0" + score[i].score + "\n";
+    highScores.innerText = text;
+  }
+  console.log(text);
+};
+
+// Send score to db
+const postHighScore = async (name, score) => {
+  console.log("posting highscore");
+
+  const response = await fetch("http://localhost:3001/api/scores", {
+    method: "POST",
+    body: JSON.stringify({
+      name: name,
+      score: score,
+    }),
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+  console.log(response);
 };
