@@ -1,0 +1,47 @@
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 2.6vw;
+}
+
+.gameOverCard {
+  padding: 4em;
+  background-color: darkgray;
+  border: 3px solid black;
+  max-width: 1000px;
+  max-height: 1000px;
+
+  min-height: 35vw;
+  min-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerScore {
+  margin-right: 3em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.highScores {
+  margin-left: 3em;
+  background-color: white;
+  text-align: center;
+  border: 6px solid black;
+  min-width: 500px;
+  min-height: 100% - 5px;
+  max-width: 100% - 5px;
+  max-height: 100% - 5px;
+  font-size: 1vw;
+}
