@@ -1,20 +1,3 @@
-const card = document.getElementById("gameOverCard");
-
-// Card visibility
-//card.style.visibility = "hidden";
-
-// Main menu button
-const toMainMenu = () => {
-  console.log("to main menu");
-
-  //setPlayerScore(42043);
-};
-
-// Retry button
-const retry = () => {
-  console.log("retry");
-};
-
 // Set player score
 export const setPlayerScore = (points) => {
   points = parseInt(points);
@@ -23,7 +6,6 @@ export const setPlayerScore = (points) => {
 };
 
 // Fetch scores from backend
-
 export const fetchHighScores = async () => {
   const highScores = document.querySelector("#db_scores");
 
@@ -41,11 +23,6 @@ export const fetchHighScores = async () => {
     highScores.appendChild(li);
   }
 
-  /*let text = "";
-  for (let i = 0; i < score.length; i++) {
-    text = text + score[i].name + ":\xa0\xa0" + score[i].score + "\n";
-    highScores.innerText = text;
-  }*/
   console.log(text);
 };
 
