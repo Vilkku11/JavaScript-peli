@@ -1,4 +1,4 @@
-h1 {
+.h1color {
   color: black;
   text-align: center;
   font-size: 2.6vw;
@@ -6,7 +6,7 @@ h1 {
 
 .gameOverCard {
   padding: 4em;
-  background-color: darkgray;
+  background-color: lightblue;
   border: 3px solid black;
   max-width: 1000px;
   max-height: 1000px;
@@ -36,8 +36,9 @@ h1 {
 
 .highScores {
   margin-left: 3em;
+  list-style: inside;
   background-color: white;
-  text-align: center;
+  text-align: left;
   border: 6px solid black;
   min-width: 500px;
   min-height: 100% - 5px;
