@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Js peli</title>
-        <link rel='stylesheet' href='index.css' />
-    </head>
-    <body>
-        <canvas width='300' height='600' id="gameCanvas"></canvas>
-        <img id="player" src="assets/playerPlaceholder.png">
-        <img id="platform" src="assets/platformPlaceholder.png">
-        <img id="movingPlatform" src="assets/movingPlatformPlaceholder.png">
-        <img id="background" src="assets/backgroundPlaceholder.png">
+  <head>
+    <title>Js peli</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="game-over/index.css" />
+  </head>
+  <body>
+    <canvas width="300" height="600" id="gameCanvas"></canvas>
+    <img id="player" src="assets/playerPlaceholder.png" />
+    <img id="platform" src="assets/platformPlaceholder.png" />
+    <img id="movingPlatform" src="assets/movingPlatformPlaceholder.png" />
+    <img id="background" src="assets/backgroundPlaceholder.png" />
 
+    <!--Game over card-->
+    <div class="gameOverCard" id="gameOverCard">
+      <div class="score">
+        <div class="playerScore">
+          <h1 id=".h1color">Your score was</h1>
+          <h1 id="player_score">49!</h1>
+          <div class="buttons">
+            <button id="mainMenuButton">Main Menu</button>
+            <button id="retryButton" onclick="retry()">Retry</button>
+          </div>
+        </div>
 
-        <script type="module" src="./js/Peli.js"></script>
-    </body>
+        <div class="highScores" id="highScores">
+          <h1 id="h1color">High scores:</h1>
+          <ol id="db_scores"></ol>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/Peli.js"></script>
+    <script type="module" src="/game-over/index.js"></script>
+  </body>
 </html>
