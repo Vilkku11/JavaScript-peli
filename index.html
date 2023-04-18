@@ -20,10 +20,11 @@
         <div class="playerScore">
           <h1 id=".h1color">Your score was</h1>
           <h1 id="player_score">49!</h1>
-          <div class="buttons">
+          <div class="btn-group">
             <button id="mainMenuButton">Main Menu</button>    
-            <button id="retryButton" onclick="retry()">Retry</button>
-            <button id="submitButton" onclick="">Submit</button>
+            <button id="retryButton">Retry</button>
+            <input type="text" id="myInput" class="myInput">
+            <button id="submitButton">Submit</button>
           </div>
         </div>
       </div>
@@ -45,6 +46,29 @@
         <div class="top3-div">
             <h1>TOP3</h1>
             <ol id="top-score-list"></ol>
+        </div>
+      </div>
+
+      <div class="instructionsCard" id="instructionsCard">
+         <div class="instructionsDiv">
+          Click arrow keys to move around 
+          <div class="btn-group">
+            <button id="back-btn-1">Back</button>
+          </div>
+        </div>
+        <div class="instructionsDiv-2">
+
+        </div>
+      </div>
+
+      <div class="settingsCard" id="settingsCard">
+        <div class="settingsDiv">
+          no Settings;
+          <div class="btn-group">
+              <button id="back-btn-2">Back</button>
+          </div>
+        </div>
+        <div class="settingsDiv-2">
         </div>
       </div>
    <script type="module" src="./js/Peli.js"></script>

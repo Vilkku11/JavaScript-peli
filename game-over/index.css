@@ -5,18 +5,25 @@
 }
 
 .gameOverCard {
+  margin-top: 2rem;
   padding: 4em;
   background-color: lightblue;
   border: 3px solid black;
   max-width: 1000px;
   max-height: 1000px;
-
   min-height: 35vw;
   min-width: 70vw;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-evenly;
+}
+
+li{
+  margin-top: 15%;
+  font-family: 'seriousr2b', sans-serif;
+  margin-left: 1rem;
+
 }
 
 .score {
@@ -37,7 +44,7 @@
 .highScores {
   margin-left: 3em;
   list-style: inside;
-  background-color: white;
+  background-color: lightgreen;
   text-align: left;
   border: 6px solid black;
   min-width: 500px;
@@ -45,4 +52,5 @@
   max-width: 100% - 5px;
   max-height: 100% - 5px;
   font-size: 1vw;
+  overflow: scroll;
 }
