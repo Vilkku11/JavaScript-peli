@@ -11,8 +11,10 @@ import { postHighScore } from "../game-over/index.js";
 export default class Game {
   constructor(width, height) {
     this.backgroundImage = document.getElementById("background");
+    this.mainMenuCard = document.getElementById("mainMenuCard");
     this.gameOverCard = document.getElementById("gameOverCard");
     this.gameCanvas = document.getElementById("gameCanvas");
+    this.mainMenu = false;
     this.gameOver = false;
     this.width = width;
     this.height = height;
