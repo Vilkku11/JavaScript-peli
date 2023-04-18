@@ -6,6 +6,16 @@ router.get('/', async (req, res) => {
     res.json(score)
 })
 
+router.get('/top', async (req, res) => {
+    try {
+      const scores = await Score.find({}).sort({score: -1}).limit(3);
+      res.json(scores);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
+});
+
 router.post('/', async (req, res) => {
     const body = await req.body
     console.log(body)
