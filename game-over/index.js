@@ -7,24 +7,29 @@ export const setPlayerScore = (points) => {
 
 // Fetch scores from backend
 export const fetchHighScores = async () => {
-  const highScores = document.querySelector("#db_scores");
+  console.log("Fetching data");
+  fetch('http://localhost:3001/api/scores/highscores')
+    .then(response => response.json())  // Parse the response as JSON
+    .then(scores => {
+      // Get the <ol> element for the scores
+      const scoresList = document.getElementById('db_scores');
 
-  console.log("fetching highscores");
-  const response = await fetch("http://localhost:3001/api/scores");
-  let score = await response.json();
-  score = score.sort((a, b) => b.score - a.score);
-  console.log(score);
+      // Clear the existing list items
+      scoresList.innerHTML = '';
 
-  let text = "";
-  for (let i = 0; i < score.length; i++) {
-    text = score[i].name + ":\xa0\xa0" + score[i].score + "\n";
-    let li = document.createElement("li");
-    li.innerText = text;
-    highScores.appendChild(li);
-  }
-
-  console.log(text);
+      // Create a new list item for each score and add it to the <ol>
+      scores.forEach(score => {
+        const listItem = document.createElement('li');
+        listItem.textContent = score.name + ': ' + score.score;
+        scoresList.appendChild(listItem);
+      });
+      console.log(scores);
+    })
+    .catch(error => {
+      console.error('Error fetching top 3 scores:', error);
+    });
 };
+
 
 // Send score to db
 export const postHighScore = async (name, score) => {

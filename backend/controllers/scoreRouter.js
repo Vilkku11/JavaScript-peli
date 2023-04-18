@@ -16,6 +16,16 @@ router.get('/top', async (req, res) => {
     }
 });
 
+router.get('/highscores', async (req,res) => {
+    try{
+        const scores = await Score.find({}).sort({score: -1}).limit(8);
+        res.json(scores);
+    } catch(err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+})
+
 router.post('/', async (req, res) => {
     const body = await req.body
     console.log(body)
