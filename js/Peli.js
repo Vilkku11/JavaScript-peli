@@ -10,7 +10,6 @@ canvas.style.visibility = "hidden";
 window.addEventListener("load", async function () {
   const settingsMenu = document.getElementById("settingsCard");
   const instructionsMenu = document.getElementById("instructionsCard");
-  const canvas = document.getElementById("gameCanvas");
 
   // Set gameOverCard hidden
   const gameOver = document.getElementById("gameOverCard");
@@ -49,15 +48,12 @@ document.getElementById("play-btn").addEventListener("click", function() {
   console.log("start button pressed :o");
 
   // Hide gameOver and make gameCanvas visible again,
-  const canvas = document.getElementById("gameCanvas");
   const gameOver = document.getElementById("gameOverCard");
   const mainMenu = document.getElementById("mainMenuCard");
   canvas.style.visibility = "visible";
   gameOver.style.visibility = "hidden";
   mainMenu.style.visibility = "hidden";
   // Trigger "load" event to restart game loop
-  dispatchEvent(new Event("load"));
-
 });
 
 
@@ -66,7 +62,6 @@ document.getElementById("retryButton").addEventListener("click", function () {
   console.log("retry button pressed :o");
 
   // Hide gameOver and make gameCanvas visible again,
-  const canvas = document.getElementById("gameCanvas");
   const gameOver = document.getElementById("gameOverCard");
   const mainMenu = document.getElementById("mainMenuCard");
   mainMenu.style.visibility = "hidden";
@@ -84,7 +79,6 @@ document.getElementById("mainMenuButton").addEventListener("click", async functi
   console.log("mainMenu button pressed :o");
   const scores = await fetchTopThree();
   console.log(scores);
-  const canvas = document.getElementById("gameCanvas");
   const gameOver = document.getElementById("gameOverCard");
   const mainMenu = document.getElementById("mainMenuCard");
   canvas.style.visibility = "hidden";

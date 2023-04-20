@@ -58,6 +58,7 @@ export default class Game {
   }
 
   startUp() {
+    this.platforms = []
     //pelaajan aloitus koordinaatit ja alustetaan pelaajan tiedot
     let startingX = (this.width - this.player.width) * 0.5;
     let startingY =
@@ -93,9 +94,8 @@ export default class Game {
     this.updatePlatforms(rollDown);
     this.calcPoints(rollDown);
     this.createPlatforms();
-
     //katsotaan tippuiko pelaaja näytön alle, silloin hän hävisi pelin
-    if (this.player.y > this.height - this.player.height / 2) {
+    if (this.player.y > this.height) {
       this.gameOver = true;
 
       // Set, fetch, and send scores
