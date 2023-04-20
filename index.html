@@ -8,7 +8,7 @@
     <link href="https://fonts.cdnfonts.com/css/serious-rounded" rel="stylesheet">
   </head>
   <body>
-    <canvas width="300" height="600" id="gameCanvas"></canvas>
+    <canvas width="300" height="600" tabindex="0" id="gameCanvas"></canvas>
     <img id="player" src="assets/playerPlaceholder.png" />
     <img id="platform" src="assets/platformPlaceholder.png" />
     <img id="movingPlatform" src="assets/movingPlatformPlaceholder.png" />
@@ -36,7 +36,7 @@
 
       <div class="mainMenuCard" id="mainMenuCard">
         <div class="main-menu-div">
-            <h1>Main Menu</h1>
+            <h1 id="main-menu-text">Main Menu</h1>
             <div class="btn-group">
                 <button id="play-btn">Play Game</button>
                 <button id="instructions-btn">Instructions</button>
@@ -44,13 +44,13 @@
             </div>
         </div>
         <div class="top3-div">
-            <h1>TOP3</h1>
+            <h1 id="top-h1">TOP3</h1>
             <ol id="top-score-list"></ol>
         </div>
       </div>
 
       <div class="instructionsCard" id="instructionsCard">
-         <div class="instructionsDiv">
+         <div class="instructionsDiv" id="instructionsDiv">
           Click arrow keys to move around 
           <div class="btn-group">
             <button id="back-btn-1">Back</button>
@@ -62,7 +62,7 @@
       </div>
 
       <div class="settingsCard" id="settingsCard">
-        <div class="settingsDiv">
+        <div class="settingsDiv" id="settingsDiv">
           no Settings;
           <div class="btn-group">
               <button id="back-btn-2">Back</button>

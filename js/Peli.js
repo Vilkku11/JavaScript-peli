@@ -1,5 +1,5 @@
 import { fetchHighScores } from "../game-over/index.js";
-import { fetchTopThree } from "../main-menu/index.js";
+import { fetchTopThree, postScore } from "../main-menu/index.js";
 import Game from "./game.js";
 
 const mainMenu = document.getElementById("mainMenuCard");
@@ -88,6 +88,9 @@ document.getElementById("mainMenuButton").addEventListener("click", async functi
 
 document.getElementById("submitButton").addEventListener("click", async function() {
   console.log("submit button clicked");
+  const name = document.getElementById("myInput");
+  const score = document.getElementById("player_score");
+  await postScore(name.value, score.textContent);
 })
 
 document.getElementById("instructions-btn").addEventListener("click",function() {
