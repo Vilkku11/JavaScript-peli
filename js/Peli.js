@@ -1,6 +1,7 @@
 import { fetchHighScores } from "../game-over/index.js";
 import { fetchTopThree } from "../main-menu/index.js";
 import Game from "./game.js";
+
 const mainMenu = document.getElementById("mainMenuCard");
 mainMenu.style.visibility = "visible";
 const canvas = document.getElementById("gameCanvas");

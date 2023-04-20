@@ -1,9 +1,5 @@
 
 console.log("Test");
-export const toMainMenu = async () => {
-    console.log("Navigating to main menu...");
-    window.location.href = "mainMenu.html";
-};
 
 export const fetchTopThree = async () => {
     console.log("Fetching data");
