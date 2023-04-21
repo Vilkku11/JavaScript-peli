@@ -49,4 +49,15 @@ router.delete('/:id', async (req, res) => {
     res.status(204).end()
 })
 
+router.delete('/delete/all', async (req, res) => {
+    try {
+      const result = await Score.deleteMany();
+      console.log(result.deletedCount + ' documents deleted');
+      res.status(204).end();
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to delete scores' });
+    }
+  });
+
 module.exports = router
