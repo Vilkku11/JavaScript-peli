@@ -64,9 +64,16 @@
       <div class="settingsCard" id="settingsCard">
         <div class="settingsDiv">
           <h1>Gravity:</h1>
-          <input type="text" id="gravity" name="gravity" value="0.03"><br>
+          <input type="range" id="gravity" name="gravity" min="0" max="5" step="0.01" value="0.03"
+              oninput="gravityValue.innerHTML = this.value"><br>
+          <label for="gravity">Current value:</label>
+          <span id="gravityValue">0.03</span><br>
+          
           <h2>Maximum vertical speed:</h2>
-          <input type="text" id="maxYSpeed" name="maxYSpeed" value="3.8"><br><br>
+          <input type="range" id="maxYSpeed" name="maxYSpeed" min="0" max="50" step="0.01" value="3.8"
+              oninput="maxYSpeedValue.innerHTML = this.value"><br>
+          <label for="maxYSpeed">Current value:</label>
+          <span id="maxYSpeedValue">3.8</span><br><br>
           <div class="btn-group">
             <button id="saveSettings">Save settings</button>
             <button id="defaultSetting">default settings</button>
