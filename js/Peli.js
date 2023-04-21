@@ -5,6 +5,11 @@ const mainMenu = document.getElementById("mainMenuCard");
 mainMenu.style.visibility = "visible";
 const canvas = document.getElementById("gameCanvas");
 canvas.style.visibility = "hidden";
+let i = 0;
+const defaultGravity = 0.03;
+const defaultMaxYSpeed = 3.8;
+let gravity = 0;
+let maxYSpeed = 0;
 
 window.addEventListener("load", async function () {
   const settingsMenu = document.getElementById("settingsCard");
@@ -41,7 +46,21 @@ window.addEventListener("load", async function () {
   //alustetaan pelin tiedot
   game.startUp();
   //aloitetaan peli
-  startGame();
+  if (i > 0) {
+    console.log("gravity: " + gravity);
+    console.log((gravity !== 0))
+    console.log(typeof(gravity))
+    console.log(typeof(gravity) === "number")
+    if ((gravity !== 0)  && (typeof(gravity) === "number")) {
+      game.player.gravity = gravity;
+      console.log(gravity)
+    }
+    if (maxYSpeed !== 0 && typeof(maxYSpeed) === "number") {
+      game.player.minSpeedY = maxYSpeed * -1;
+    }
+    startGame();
+  }
+  i++;
 });
 
 document.getElementById("play-btn").addEventListener("click", function() {
@@ -124,4 +143,19 @@ document.getElementById("back-btn-2").addEventListener("click", function() {
   const menu = document.getElementById("mainMenuCard");
   settings.style.visibility = "hidden";
   menu.style.visibility = "visible";
+});
+
+
+document.getElementById("saveSettings").addEventListener("click", function() {
+  console.log("Save settings button pressed");
+  maxYSpeed = parseFloat(document.getElementById("maxYSpeed").value);
+  gravity = parseFloat(document.getElementById("gravity").value);
+});
+
+document.getElementById("defaultSetting").addEventListener("click", function() {
+  console.log("Save settings button pressed");
+  document.getElementById("gravity").value = defaultGravity;
+  document.getElementById("maxYSpeed").value = defaultMaxYSpeed;
+  maxYSpeed = 0;
+  gravity = 0;
 });
