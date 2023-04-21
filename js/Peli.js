@@ -73,6 +73,7 @@ document.getElementById("play-btn").addEventListener("click", function() {
   gameOver.style.visibility = "hidden";
   mainMenu.style.visibility = "hidden";
   // Trigger "load" event to restart game loop
+  dispatchEvent(new Event("load"));
 });
 
 
