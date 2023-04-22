@@ -27,7 +27,6 @@ export default class Platform {
 
   //piirretään platform näytölle
   draw(context) {
-    context.fillRect(this.x, this.y, this.width, this.height);
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
 }

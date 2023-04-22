@@ -73,7 +73,6 @@ export default class Player {
   //pirretään pelaaja näytölle
   draw(context) {
     this.x.forEach(x => {
-      context.fillRect(x, this.y, this.width, this.height);
       context.drawImage(this.image, x, this.y, this.width, this.height);
     });      
   }
