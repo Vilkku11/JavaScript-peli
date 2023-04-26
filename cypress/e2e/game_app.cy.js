@@ -15,10 +15,10 @@ describe('Testing button functionality', () => {
         cy.visit('http://127.0.0.1:5500/');
         cy.get('#main-menu-text').contains('Main Menu');
         cy.get('#instructions-btn').contains('Instructions').click();
-        cy.get('#instructionsDiv').contains('Click arrow keys to move around');
+        cy.get('#instructionsDiv').should('be.visible');
         cy.get('#back-btn-1').click();
         cy.get('#settings-btn').contains('Game Settings').click();
-        cy.get('#settingsDiv').contains('no Settings;');
+        cy.get('#settingsDiv').should('be.visible');
         cy.get('#back-btn-2').click();
     })
 })
@@ -32,13 +32,42 @@ describe('Game should launch on click', () => {
         .should('be.visible')
         .click()
         .type('{leftarrow}', {release: false})
-        .wait(5000)
-        .type('{leftarrow}', {release: true});
-      
-      
+        .wait(2000)
+        .type('{leftarrow}', {release: true}); 
     })
 })
 
+describe('Should change the speed and lose the game', () => {
+    it('Changing settings and testing Restart', () => {
+        cy.visit('http://127.0.0.1:5500/');
+        cy.get('#settings-btn').contains('Game Settings').click();
+        cy.get('#gravity').invoke('val', 1).trigger('input');
+        cy.get('#maxYSpeed').invoke('val', 5).trigger('input');
+        cy.get('#saveSettings').click();
+        cy.get('#back-btn-2').click();
+        cy.get('#play-btn').contains('Play Game').click();
+        cy.get('#gameCanvas').should('be.visible').wait(1000);
+        cy.get('#gameOverCard').should('be.visible');
+        cy.get('#mainMenuButton').should('be.visible');
+        cy.get('#retryButton').should('be.visible');
+        cy.get('#highScores').should('be.visible');
+        cy.get('#retryButton').click().wait(1000);
+    })
+})
+
+describe('Changing settings and trying the Menu Button', () => {
+    it('Testing main menu button', () => {
+        cy.visit('http://127.0.0.1:5500/');
+        cy.get('#settings-btn').contains('Game Settings').click();
+        cy.get('#gravity').invoke('val', 1).trigger('input');
+        cy.get('#maxYSpeed').invoke('val', 5).trigger('input');
+        cy.get('#saveSettings').click();
+        cy.get('#back-btn-2').click();
+        cy.get('#play-btn').contains('Play Game').click();
+        cy.get('#gameCanvas').should('be.visible').wait(1000);
+        cy.get('#mainMenuButton').click().wait(1000);
+    })
+})
 
 describe('Backend Test', () => {
     it('should resolve a Promise', () => {
