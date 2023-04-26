@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Js peli</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="main-menu/index.css"/>
+    <link rel="stylesheet" href="game-over/index.css" />
+    <link href="https://fonts.cdnfonts.com/css/serious-rounded" rel="stylesheet">
+  </head>
+  <body>
+    <canvas width="300" height="600" tabindex="0" id="gameCanvas"></canvas>
+    <img id="player" style="background-color: transparent;" src="assets/playerPlaceholder.png" />
+    <img id="platform" src="assets/platformPlaceholder.png" />
+    <img id="movingPlatform" src="assets/cloud.png" />
+    <img id="background" src="assets/backgroundPlaceholder.png" />
+
+    <!--Game over card-->
+    <div class="gameOverCard" id="gameOverCard">
+      <div class="score">
+        <div class="playerScore">
+          <h1 id=".h1color">Your score was</h1>
+          <h1 id="player_score">49!</h1>
+          <div class="btn-group">
+            <button id="mainMenuButton">Main Menu</button>    
+            <button id="retryButton">Retry</button>
+            <input type="text" id="myInput" class="myInput">
+            <button id="submitButton">Submit</button>
+          </div>
+        </div>
+      </div>
+        <div class="highScores" id="highScores">
+          <h1 id="h1color">High scores:</h1>
+          <ol id="db_scores"></ol>
+        </div>
+    </div>
+
+      <div class="mainMenuCard" id="mainMenuCard">
+        <div class="main-menu-div">
+            <h1 id="main-menu-text">Main Menu</h1>
+            <div class="btn-group">
+                <button id="play-btn">Play Game</button>
+                <button id="instructions-btn">Instructions</button>
+                <button id="settings-btn">Game Settings</button>
+            </div>
+        </div>
+        <div class="top3-div">
+            <h1 id="top-h1">TOP3</h1>
+            <ol id="top-score-list"></ol>
+        </div>
+      </div>
+
+      <div class="instructionsCard" id="instructionsCard">
+         <div class="instructionsDiv" id="instructionsDiv">
+          <p>This game is simple platformer game. The idea is to get the cat as high as possible.</p>
+          <p>To make the cat rise higher: click arrow keys left or right.</p>
+          <p>To make game harder: check the game settings.</p>
+          <div class="btn-group">
+            <button id="back-btn-1">Back</button>
+          </div>
+        </div>
+        <div class="instructionsDiv-2">
+          <img src="assets/gamess.png" style="border-radius: 50%; width: 180%; margin: -40%;" />
+          <img src="assets/arrowkeys.png" style="border-radius: 50%; width: 100%; margin-left: -40%; margin-top: 50%;" />
+        </div>
+      </div>
+
+      <div class="settingsCard" id="settingsCard">
+        <div class="settingsDiv">
+          <h1>Gravity:</h1>
+          <input type="range" id="gravity" name="gravity" min="0" max="5" step="0.01" value="0.03"
+              oninput="gravityValue.innerHTML = this.value"><br>
+          <label for="gravity">Current value:</label>
+          <span id="gravityValue">0.03</span><br>
+          
+          <h2>Maximum vertical speed:</h2>
+          <input type="range" id="maxYSpeed" name="maxYSpeed" min="0" max="50" step="0.01" value="3.8"
+              oninput="maxYSpeedValue.innerHTML = this.value"><br>
+          <label for="maxYSpeed">Current value:</label>
+          <span id="maxYSpeedValue">3.8</span><br><br>
+          <div class="btn-group">
+            <button id="saveSettings">Save settings</button>
+            <button id="defaultSetting">default settings</button>
+            <button id="back-btn-2">Back</button>
+          </div>
+
+        </div>
+        <div class="settingsDiv-2">
+        </div>
+      </div>
+   <script type="module" src="./js/Peli.js"></script>
+   <script type="module" src="./game-over/index.js"></script>
+   <script type="module" src="./main-menu/index.js"></script>
+   
+  </body>
+</html>

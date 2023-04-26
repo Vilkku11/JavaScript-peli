@@ -1,0 +1,132 @@
+
+button {
+    white-space: pre-line;
+}
+.mainMenuCard {
+    max-width: 1000px;
+    max-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4em;
+    min-height: 35vw;
+    min-width: 70vw;
+    display: flex;
+    justify-content: center;
+    border: 2px;
+}
+.main-menu-div {
+    outline: solid black;
+    background-color: lightskyblue;
+    padding: 10%;
+    float: left;
+    width: 40%;
+    align-items: center;
+}
+.top3-div {
+    outline: solid black;
+    background-color: lightgreen;
+    padding: 10%;
+    float: right;
+    width: 40%;
+    align-items: center;
+    justify-content: absolute;
+
+}
+h1 {
+    font-family: 'seriousr4b', sans-serif;
+    justify-content: absolute;
+
+}
+.btn-group button{
+    padding: 10px 24px; /* Some padding /
+    cursor: pointer; / Pointer/hand icon /
+    display: block; / Make the buttons appear below each other */
+    margin-top: 8%;
+    font-family: 'seriousr2b', sans-serif;
+    justify-content: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .myInput {
+    padding: 0.5rem;
+    margin-top: 5vh;
+    margin-right: 1rem; /* add some margin between the input and the button */
+  }
+
+li {
+    margin-top: 15%;
+    font-family: 'seriousr2b', sans-serif;
+    justify-content: absolute;
+}
+
+.back-btn button {
+    padding: 10px 24px; /* Some padding /
+    cursor: pointer; / Pointer/hand icon /
+    display: block; / Make the buttons appear below each other */
+    margin-top: 8%;
+    font-family: 'seriousr2b', sans-serif;
+    justify-content: absolute;
+}
+.settingsCard {
+    max-width: 1000px;
+    max-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4em;
+    min-height: 35vw;
+    min-width: 70vw;
+    display: flex;
+    justify-content: center;
+}
+
+.settingsDiv {
+    outline: solid black;
+
+    background-color: lightskyblue;
+    padding: 10%;
+    float: left;
+    width: 40%;
+    align-items: center;
+}
+
+.settingsDiv-2{
+    outline: solid black;
+    background-color: lightgreen;
+    padding: 10%;
+    float: right;
+    width: 40%;
+    align-items: center;
+    justify-content: absolute;
+}
+.instructionsCard {
+    max-width: 1000px;
+    max-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4em;
+    min-height: 35vw;
+    min-width: 70vw;
+    display: flex;
+    justify-content: center;
+}
+
+.instructionsDiv {
+    outline: solid black;
+    background-color: lightskyblue;
+    padding: 10%;
+    float: left;
+    width: 40%;
+    align-items: center;
+}
+.instructionsDiv-2{
+    outline: solid black;
+    background-color: lightgreen;
+    padding: 10%;
+    float: right;
+    width: 40%;
+    align-items: center;
+    justify-content: absolute;
+}
